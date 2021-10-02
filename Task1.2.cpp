@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    printf("Найдем длину окружности L \n");
+    cout << "Найдем длину окружности L \n";
     float d;
     const float PI = 3.14;
     cout << "Введите диаметр окружности\n d = ";
