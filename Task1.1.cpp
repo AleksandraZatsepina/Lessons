@@ -1,9 +1,8 @@
-﻿#include <stdio.h>
+﻿#include <iostream>
 using namespace std;
 
 int main()
 {
-    setlocale(0, "");
     int a, b, S, P;
     printf("Выведем площадь и периметр прямоугольника \n");
     cout << "Введите сторону a = ";
