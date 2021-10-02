@@ -19,3 +19,24 @@ int main()
     return 0;
 }
 
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    int A, B, C, AC, BC, S;
+    cout << "Найдем длины отрезков AC и BC и их сумму.\n" << "Введите значение точки A = ";
+    cin >> A;
+    cout << "Введите значение точки B = ";
+    cin >> B;
+    cout << "Введите значение точки C = ";
+    cin >> C;
+    AC = abs ( A - C );
+    cout << "Длина отрезка AC = " << AC << endl; 
+    BC = abs ( B - C );
+    cout << "Длина отрезка BC = " << BC << endl;
+    S = AC + BC;
+    cout << "Сумма отрезков = " << S << endl;
+    return 0;
+}
