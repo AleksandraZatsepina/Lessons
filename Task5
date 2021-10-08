@@ -92,3 +92,39 @@ int main()
     return 0;
 }
 
+ЗАДАНИЕ 5
+//Даны координаты трех вершин треугольника: (x1, y1), (x2, y2), (x3, y3). Найти его периметр и площадь
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    double x1, x2, x3, y1, y2, y3, P, S, XY1, XY2, XY3, p;
+    cout << "Найдем периметр и площадь треугольника по координатам его вершин.\n" << "Введите координату x1 = ";
+    cin >> x1;
+    cout << "Введите координату y1 = ";
+    cin >> y1;
+    cout << "Введите координату x2 = ";
+    cin >> x2;
+    cout << "Введите координату y2 = ";
+    cin >> y2;
+    cout << "Введите координату x3 = ";
+    cin >> x3;
+    cout << "Введите координату y3 = ";
+    cin >> y3;
+    XY1 = sqrt(pow((x2 - x1), 2) + pow((y2 -y1), 2));
+    XY2 = sqrt(pow((x3 - x2), 2) + pow((y3 -y2), 2));
+    XY3 = sqrt(pow((x1 - x3), 2) + pow((y1 -y3), 2));
+    P = XY1 + XY2 + XY3;
+    p = (XY1 + XY2 + XY3) / 2;
+    S = sqrt(p * (p - XY1) * (p - XY2) * (p - XY3));
+    cout << "Периметр = " << P << "\nПлощадь = " << S << endl;
+    return 0;
+}
+
+
+
+
+
