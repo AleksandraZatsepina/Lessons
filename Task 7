@@ -6,7 +6,7 @@ int main()
 {
     int zadanie;
     const float pi = 3.14;
-    float alfa, X, Y, A, B, x, a, V1, V2, S, T;
+    double alfa, X, x, Y, y, A, a, B, V1, V2, S, T, A1, B1, C1, A2, B2, C2;
     cout << "Введите номер задания: ";
     cin >> zadanie;
     
@@ -79,6 +79,24 @@ int main()
     }
     else
     cout << "A равно нулю" << endl;
+    break;
+    
+    case 6://ЗАДАНИЕ6
+    cout << "Найдем решение системы линейных уравнений вида A1*x + B1*y = C1, A2*x + B2*y = C2.\nВведите значение A1 = ";
+    cin >> A1;
+    cout << "Введите значение B1 = ";
+    cin >> B1;
+    cout << "Введите значение C1 = ";
+    cin >> C1;
+    cout << "Введите значение A2 = ";
+    cin >> A2;
+    cout << "Введите значение B2 = ";
+    cin >> B2;
+    cout << "Введите значение C2 = ";
+    cin >> C2 ;
+    y = (A1*C2 - A2*C1) / (A1*B2 - A2*B1);
+    x = (B2*C1 - B1*C2) / (B2*A1 - B1*A2);
+    cout << "x = " << x << "\ny = " << y << endl;
     break;
     }
     return 0;
