@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    const float pi = 3.14;
+    float alfa;
+    cout << "Определим значение угла в радианах.\nВведите значение угла α (0 < α < 360) = ";
+    cin >> alfa;
+    if (alfa > 360)
+    {
+        cout << "Угол α должен лежать в границах от 0 до 360 градусов.\n";
+    }
+    else if ( alfa == 180)
+    {
+        cout << "Значение угла в радианах = π\n";
+    }
+    else
+    {
+        cout << "Значение угла в радианах = " << (alfa * pi) / 180 << endl;
+    }
+    return 0;
+}
