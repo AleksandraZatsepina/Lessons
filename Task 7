@@ -96,6 +96,14 @@ int main()
     cin >> C2 ;
     y = (A1*C2 - A2*C1) / (A1*B2 - A2*B1);
     x = (B2*C1 - B1*C2) / (B2*A1 - B1*A2);
+    if (x == -0)
+    {
+        x = 0;
+    }
+    else if (y == -0)
+    {
+        y = 0;
+    }
     cout << "x = " << x << "\ny = " << y << endl;
     break;
     }
