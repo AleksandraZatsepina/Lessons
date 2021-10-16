@@ -1,0 +1,13 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int B, K;
+    cout << "Найдем количество полных килобайтов, которые занимает файл в байтах.\nРазмер файла в байтах = ";
+    cin >> B;
+    K = B / 1024;
+    cout << "Объем в килобайтах = " << K << endl;
+    return 0;
+}
