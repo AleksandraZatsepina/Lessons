@@ -1,13 +1,14 @@
 #include <iostream>
-
+#include <math.h>
 using namespace std;
 
 int main()
 {
-    int B, K;
+    float B, K;
     cout << "Найдем количество полных килобайтов, которые занимает файл в байтах.\nРазмер файла в байтах = ";
     cin >> B;
     K = B / 1024;
+    K = ceil(K);  // ceil() округляет к большему; floor() к меньшему
     cout << "Объем в килобайтах = " << K << endl;
     return 0;
 }
