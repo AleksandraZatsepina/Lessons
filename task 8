@@ -3,12 +3,37 @@
 using namespace std;
 
 int main()
-{
-    float B, K;
+{   
+    int zadanie;
+    float B, K, A, n;
+    cout << "Введите номер задания: ";
+    cin >> zadanie;
+    
+    switch(zadanie)
+    {
+        
+    case 1:
     cout << "Найдем количество полных килобайтов, которые занимает файл в байтах.\nРазмер файла в байтах = ";
     cin >> B;
     K = B / 1024;
     K = ceil(K);  // ceil() округляет к большему; floor() к меньшему
     cout << "Объем в килобайтах = " << K << endl;
+    break;
+    
+    case 2:
+    cout << "Найдем сколько раз отрезок В помещается в отрезок А без наложений.\nВведите число А = ";
+    cin >> A;
+    cout << "Введите число В = ";
+    cin >> B;
+    if (A > B)
+    {
+        n = A / B;
+        n = floor(n);
+        cout << "Отрезок B помещается в отрезке А " << n << " раз.";
+    }
+    else
+    cout << "A < B.";
+    break;
+    }
     return 0;
-}
+}  
