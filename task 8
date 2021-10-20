@@ -4,8 +4,10 @@ using namespace std;
 
 int main()
 {   
-    int zadanie;
-    float B, K, A, n;
+    int zadanie, C;
+    double B, K, A, n, a, c;
+    
+    
     cout << "Введите номер задания: ";
     cin >> zadanie;
     
@@ -48,6 +50,21 @@ int main()
     }
     else
     cout  <<"A < B.";
+    break;
+    
+    case 4:
+    cout << "Выведем число, полученное при перестановке цифр исходного числа.\nВведите двузначное число = ";
+    cin >> C;
+    if (C < 100 && C >= 10)
+    {
+        a = C / 10;
+        c = C % 10;
+        C = c * 10 +  a;
+        cout << "Число после перестановки равно = " << C << endl;
     }
+    else
+    cout << "Число не двузначное.";
+    }
+    
     return 0;
-}  
+}
