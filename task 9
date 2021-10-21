@@ -1,0 +1,26 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    int zadanie, N;
+    cout << "Введите номер задания: ";
+    cin >> zadanie;
+    
+    switch(zadanie)
+    {
+    case 1:
+    cout << "\nС начала суток прошло целое N секунд.\nНайдем количество секунд, прошедших с начала последней минуты.\nВведите N = ";
+    cin >> N;
+    N = N % 60;
+    cout << "Количество прошедших секунд = " << N << " сек." <<endl;
+    break;
+    
+    case 2:
+    
+
+    return 0;
+    }
+}
