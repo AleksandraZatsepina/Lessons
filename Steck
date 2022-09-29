@@ -1,0 +1,129 @@
+
+#include <iostream>
+template<typename T>
+
+class Queue
+{
+public:
+	Queue();//Конструктор по умолчание
+	Queue(int m);
+	void push(const T& d);//Добавление в очередь
+	T pop();//Извлечение с удалением
+	bool empty()const;//проверка на пустоту
+	~Queue();//Деструктор
+private:
+	int m_size;//Количество элементов в очереди
+	T* data;//Данные
+	int MAX_SIZE = 10;
+};
+
+int main()
+{
+	setlocale(0, "");
+
+		std::cout << "Enter the number of items: \n";
+		int m;
+		std::cin >> m;
+		Queue<int> qu(m);
+		bool inq = true;
+		while (inq)
+		{
+		    try
+			{
+			std::cout << "1 -Add number\n";//Добавление в стек
+			std::cout << "2 -Extract a number\n";//Извлечение из стека
+			std::cout << "5 -Exit\n";//Перейти в главное меню
+			int numeral;
+			std::cin >> numeral;
+			switch (numeral)
+			{
+			case 1:
+			{
+				std::cout << "Add number: ";
+				int number;
+				std::cin >> number;
+				qu.push(number);
+				break;
+			}
+			case 2:
+			{
+				std::cout << "Extract a number: " << qu.pop() << std::endl;
+				break;
+			}
+			case 3:
+			{
+				inq = false;
+				break;
+			}
+			default:
+				break;
+			}
+			}
+			catch (std::out_of_range& e)
+			{
+				std::cout << "Error: " << e.what();
+			}
+		}
+		return 0;
+}
+
+
+template<typename T>
+Queue<T>::Queue()
+{
+	//Обнуление данных
+	this->m_size = 0;
+	this->data = new T[Queue::MAX_SIZE];
+}
+
+template<typename T>
+Queue<T>::Queue(int m)
+{
+	//Обнуление данных
+	this->m_size = 0;
+	MAX_SIZE = m;
+	this->data = new T[Queue::MAX_SIZE];
+}
+
+template<typename T>
+inline void Queue<T>::push(const T& d)
+{
+	//Добавление числа
+	if (m_size == Queue::MAX_SIZE)//Переполнение
+		throw std::out_of_range("Queue is full.");
+	this->data[m_size] = d;
+	m_size++;
+}
+
+template<typename T>
+inline T Queue<T>::pop()
+{
+	//Извлечение
+	if (empty())
+		throw std::out_of_range("Queue is empty.");
+	T fifo = this->data[0];
+	for (int i = 1; i < m_size; i++)
+		data[i - 1] = data[i];
+	m_size--;
+	return fifo;
+}
+
+
+template<typename T>
+inline bool Queue<T>::empty() const
+{
+	//Проверка на пустоту
+	return this->m_size == 0;
+}
+
+template<typename T>
+Queue<T>::~Queue()
+{
+	//Деструктор для освождение памяти
+	delete[] data;
+}
+
+
+
+
+
